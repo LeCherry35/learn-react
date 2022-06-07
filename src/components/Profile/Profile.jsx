@@ -1,21 +1,20 @@
 import React from 'react';
+import classes from './Profile.module.css';
+
+import Wall from './Wall/Wall'
 
 const Profile = () => {
     return (
-        <div className="content">
-            <div>
+        <div>
+            <div className={classes.wallpaper}>
                 <img src="https://englishlib.org/dictionary/img/wlibrary/b/5ff5b7535a3286.34388783.jpg" />
             </div>
             
             <div>
                 Ava + Desc
             </div>
-            <div>
-                My posts
-                <div>New post</div>
-                <div>Post 1</div>
-                <div>Post 2</div>
-            </div>
+            
+            <Wall />
         </div>
     )
 };

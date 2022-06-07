@@ -1,0 +1,30 @@
+.nav {
+  grid-area: n;
+  padding: 20px;
+}
+
+.active {
+  color: red;
+}
+
+.nav__item {
+  background-color: rgb(176, 246, 255);
+  text-decoration: none;
+  padding: 5px 10px;
+  text-align: center;
+  margin: 10px;
+  box-shadow: 1px 1px 5px rgb(83, 83, 83);
+  border: 2px solid black;
+  border-radius: 3px;
+  font-size: 18px;
+  line-height: 18px;
+}
+.nav__item:hover {
+  background-color: red;
+}
+
+.nav__item:active {
+  background-color: red;
+  box-shadow:  none;
+}
+

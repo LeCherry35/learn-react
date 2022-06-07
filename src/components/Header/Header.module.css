@@ -1,0 +1,9 @@
+.header {
+    grid-area: h;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    background-color: green;
+    height: 60px;
+    text-align: center;
+  }
+  

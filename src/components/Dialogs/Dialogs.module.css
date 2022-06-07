@@ -1,0 +1,7 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.dialog__names {
+    padding: 20px;
+}
