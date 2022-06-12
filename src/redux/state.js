@@ -1,4 +1,6 @@
-import { renderEntireTree } from "../index";
+let rerenderEntireTree = () => {
+    console.log('state changed');
+}
 
 let state = {
     profilePage: {
@@ -36,6 +38,8 @@ let state = {
          
 }
 
+window.state = state;
+
 export const addPost = () => {
     let newPost = {
         id: 1,
@@ -45,12 +49,12 @@ export const addPost = () => {
     
     state.profilePage.postsData.push(newPost);
     state.profilePage.newPostText = ''; 
-    renderEntireTree(state);
+    rerenderEntireTree();
 }
 
 export const updateNewPostText = newText => {
     state.profilePage.newPostText = newText;
-    renderEntireTree(state);
+    rerenderEntireTree();
 }
 
 export const sendMessage = () => {
@@ -60,11 +64,15 @@ export const sendMessage = () => {
     }
     state.dialogsPage.messagesData.push(newMessage);
     state.dialogsPage.newMessage = 'Yo!';
-    renderEntireTree(state);
-}
-export const updateNewMessage = newMessage => {
-    state.dialogsPage.newMessage = newMessage;
-    renderEntireTree(state);
+    rerenderEntireTree();
 }
 
+export const updateNewMessage = newMessage => {
+    state.dialogsPage.newMessage = newMessage;
+    rerenderEntireTree();
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
+}
 export default state;

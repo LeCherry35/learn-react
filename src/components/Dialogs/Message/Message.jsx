@@ -5,7 +5,7 @@ import classes from './../Dialogs.module.css';
 
 
 const Message = (props) => {
-    if(props.messageData.user == 'me'){
+    if(props.messageData.user === 'me'){
         return (
     <div className={classes.message__my} >
         <div className={classes.avatar}></div>
