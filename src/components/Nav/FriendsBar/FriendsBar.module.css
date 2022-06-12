@@ -1,0 +1,10 @@
+.friend {
+    padding: 10px;
+}
+.avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    /* background-color: black; */
+    margin: 0 auto;
+}

@@ -1,20 +1,20 @@
 import React from 'react';
-import classes from './Profile.module.css';
+// import classes from './Profile.module.css';
 
-import Wall from './Wall/Wall'
+import ProfileInfo from './ProfileInfo/ProfileInfo';
+import Wall from './Wall/Wall';
 
-const Profile = () => {
+const Profile = (props) => {
+   
+
     return (
         <div>
-            <div className={classes.wallpaper}>
-                <img src="https://englishlib.org/dictionary/img/wlibrary/b/5ff5b7535a3286.34388783.jpg" />
-            </div>
+           <ProfileInfo />
             
-            <div>
-                Ava + Desc
-            </div>
-            
-            <Wall />
+            <Wall postsData={props.profileData.postsData} 
+                addPost={props.addPost}
+                newPostText={props.profileData.newPostText}
+                updateNewPostText={props.updateNewPostText}/>
         </div>
     )
 };

@@ -8,20 +8,27 @@ import News from './components/News/News';
 import Settings from './components/Settings/Settings'
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-const App = () => {
+const App = (props) => {
+  // console.log(props.uptadeNewMessage);
   return (
     <BrowserRouter>
-      
       <div className="app-wrapper">
         <Header />
 
-        <Nav />
+        <Nav navData={props.state.navData}/>
         
-        {/* <Profile /> */}
         <div className="app-wrapper-content">
         <Routes>
-            <Route path="/profile" element={<Profile/>}/>
-            <Route path="/dialogs" element={<Dialogs/>}/>
+            <Route path="/profile" 
+              element={<Profile 
+              profileData={props.state.profilePage} 
+              addPost={props.addPost} 
+              updateNewPostText={props.updateNewPostText}/>}/>
+            <Route path="/dialogs/*" 
+              element={<Dialogs 
+              dialogsData={props.state.dialogsPage}
+              sendMessage={props.sendMessage}
+              updateNewMessage={ props.updateNewMessage }/>}/>
             <Route path="/news" element={<News/>}/>
             <Route path="/settings" element={<Settings/>}/>
         </Routes>              
