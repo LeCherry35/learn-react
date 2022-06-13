@@ -9,7 +9,7 @@ import Settings from './components/Settings/Settings'
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 const App = (props) => {
-  // console.log(props.uptadeNewMessage);
+  // console.log(props);
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -17,13 +17,14 @@ const App = (props) => {
 
         <Nav navData={props.state.navData}/>
         
+        
         <div className="app-wrapper-content">
-        <Routes>
-        <Route path="/" 
+          <Routes>
+            {/* <Route path="/" 
               element={<Profile 
               profileData={props.state.profilePage} 
               addPost={props.addPost} 
-              updateNewPostText={props.updateNewPostText}/>}/>
+              updateNewPostText={props.updateNewPostText}/>}/> */}
             <Route path="/profile" 
               element={<Profile 
               profileData={props.state.profilePage} 
@@ -36,7 +37,7 @@ const App = (props) => {
               updateNewMessage={ props.updateNewMessage }/>}/>
             <Route path="/news" element={<News/>}/>
             <Route path="/settings" element={<Settings/>}/>
-        </Routes>              
+          </Routes>              
         </div> 
 
 

@@ -11,7 +11,7 @@ const Nav = (props) => {
       className.push(classes.nav__item__active);
     }
     return className.join(' ');
-}
+  }
         return (
       <nav className={classes.nav}>
         <NavLink className={ getClassNames } to="/profile" ><div>Profile</div></NavLink>   

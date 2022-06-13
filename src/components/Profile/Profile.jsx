@@ -5,7 +5,7 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 import Wall from './Wall/Wall';
 
 const Profile = (props) => {
-   
+   debugger;
 
     return (
         <div>
