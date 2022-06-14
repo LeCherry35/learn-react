@@ -5,7 +5,8 @@ import NewPost from './NewPost/NewPost';
 
 const Wall = (props) => {
 
-    
+    // console.log(props);
+    // debugger;
 
     let postsElements = props.postsData.map((post,id) => {
         return (
@@ -16,9 +17,8 @@ const Wall = (props) => {
 
     return (
         <div className={classes.wall}>
-            <NewPost addPost={props.addPost} 
-                newPostText={props.newPostText}
-                updateNewPostText={props.updateNewPostText}/>
+            <NewPost dispatch={props.dispatch}
+                newPostText={props.newPostText}/>
             {postsElements}
         </div>
     )
