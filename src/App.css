@@ -9,26 +9,18 @@
   grid-gap: 1px ;
 }
 
-.header {
-  grid-area: h;
-  background-color: green;
-}
-.header img {
-  height: 60px;;
-}
-
-.nav {
-  grid-area: n;
-  background-color: rgb(164, 168, 29);
-}
-
-.content {
+.app-wrapper-content {
   grid-area: c;
-  background-color: blueviolet;
+  margin: 10px;
+  overflow: hidden;
+}
 
+a {
+  color: inherit;
+  text-decoration: none;
 }
-.content img {
-  width: 100%;
-  height: 100px;
-}
+
+
+
+
 
