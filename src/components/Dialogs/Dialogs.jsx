@@ -1,25 +1,25 @@
 import React from 'react';
 import classes from './Dialogs.module.css';
-
 import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
-import NewMessage from './Message/AddMessage/NewMessage';
+import NewMessageContainer from './Message/AddMessage/NewMessageContainer';
 
 const Dialogs = (props) => {
-    // console.log(props)
+    // console.log('Dialogs', props)
+    // console.log('DialogsData', props.dialogsPage.dialogsData)
     
-    let dialogsElements = props.dialogsData.dialogsData.map((dialog,id) => {
+    let dialogsElements = props.dialogsPage.dialogsData.map((dialog,id) => {
         return  (<Dialog name={dialog.name} key={id}/>)
     });
 
-    let messagesElements = props.dialogsData.messagesData.map((messageData,id) => {
+    let messagesElements = props.dialogsPage.messagesData.map((messageData,id) => {
         return (<Message messageData={messageData} key={id}/>)
     })
 
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialog__names}>
-            {dialogsElements}              
+                {dialogsElements}              
             </div>
             <div>
                 <div className={classes.dialog__messages}>
@@ -28,8 +28,7 @@ const Dialogs = (props) => {
                     </div>
                                   
                 </div>
-                <NewMessage newMessage={props.dialogsData.newMessage}
-                    dispatch={props.dispatch}/>
+                <NewMessageContainer />
             </div>
             
             

@@ -3,20 +3,23 @@ import './App.css';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav'
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings'
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
+
 const App = (props) => {
   // debugger;
-  // console.log(props);
+  // console.log('App', props);
+
+  
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
 
-        <Nav navData={props.state.navData}/>
+        <Nav />
         
         
         <div className="app-wrapper-content">
@@ -24,13 +27,9 @@ const App = (props) => {
             {/* <Route path="/" 
               element={<Profile /> */}
             <Route path="/profile" 
-              element={<Profile 
-              profileData={props.state.profilePage} 
-              dispatch={props.dispatch}/>}/>
+              element={<Profile />}/>
             <Route path="/dialogs/*" 
-              element={<Dialogs 
-              dialogsData={props.state.dialogsPage}
-              dispatch={props.dispatch}/>}/>
+              element={<DialogsContainer />}/>
             <Route path="/news" element={<News/>}/>
             <Route path="/settings" element={<Settings/>}/>
           </Routes>              

@@ -1,22 +1,21 @@
 import React from 'react';
 import classes from './../../Dialogs.module.css';
-import { onNewMessageTextChangeAtionCreator, sendMessageActionCreator } from '../../../../redux/dialogs-reducer';
 
-const AddMessage = (props) => {
-    // console.log(props)
+const NewMessage = (props) => {
+    // console.log('NMT', props.newMessageText)
 
     const sendMessage = () => {
-        props.dispatch(sendMessageActionCreator());
+        props.sendMessage();
     }
 
     const onNewMessageTextChange = (e) => {
         let text = e.target.value;
-        props.dispatch(onNewMessageTextChangeAtionCreator(text));
+        props.onNewMessageTextChange(text);
     }
 
     return (
         <div className={classes.addMessage}>
-            <textarea placeholder='Enter' value={props.newMessage} onChange={ onNewMessageTextChange }/>
+            <textarea placeholder='Enter' value={props.newMessageText} onChange={ onNewMessageTextChange }/>
             <div>
                 <button onClick={ sendMessage }>Send</button>
             </div>
@@ -24,4 +23,4 @@ const AddMessage = (props) => {
     )
 }
 
-export default AddMessage;
+export default NewMessage;

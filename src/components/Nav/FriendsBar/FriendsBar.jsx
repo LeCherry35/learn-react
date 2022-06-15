@@ -4,6 +4,8 @@ import classes from './FriendsBar.module.css';
 
 
 function FriendsBar(props){
+
+    // console.log('FB', props)
     
     let friends = props.friends.map((friend,id) => {
         let bg = "url('" + friend.ava + "')"

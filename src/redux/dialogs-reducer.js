@@ -1,19 +1,43 @@
 const SEND_MESSAGE = 'SEND-MESSAGE';
 const UPDATE_NEW_MESSAGE = 'UPDATE-NEW-MESSAGE';
 
-const dialogsReducer = (state, action) => {
+const initialState = {
+    dialogsData: [
+        {name: 'Nom'},
+        {name: 'Alisa'},
+        {name: 'BOsrd'},
+        {name: 'Boris'},
+        {name: 'Loh'},
+    ],
+    messagesData: [
+        {user: 'Nom', message: 'Hi', ava: './img/photo_2022-02-19_20-13-34.jpg'},
+        {user: 'me', message: 'Yosip,asfjnflaflkenfejfnaelsfnaslkjf fa;nefj nsljanf kjldfn akjdsf nakjlen falkjefn kaejsnlkjsn kejnfkjakjdnf ajdsfn aj;nglfj;alng ladf;kgn;alk kngl;a'},
+        {user: 'Nom', message: 'Wassup', ava: './img/photo_2022-02-19_20-13-34.jpg'},
+        {user: 'me', message: 'So'},
+        {user: 'Nom', message: 'Go', ava: './img/photo_2022-02-19_20-13-34.jpg'},
+    ],
+    newMessageText: '',
+}
+const dialogsReducer = (state = initialState, action) => {
     switch (action.type)  {
-        case SEND_MESSAGE: 
+        case SEND_MESSAGE: {
             const newMessage = {
                 user: 'me',
-                message: state.newMessage,
+                message: state.newMessageText,
             };
-            state.messagesData.push(newMessage);
-            state.newMessage = '';
-            return state;
-        case UPDATE_NEW_MESSAGE:
-            state.newMessage = action.newMessage;
-            return state;
+            let stateCopy = {...state};
+            stateCopy.messagesData = [...state.messagesData];
+            stateCopy.messagesData.push(newMessage);
+            stateCopy.newMessageText = '';
+            return stateCopy;
+        }
+            
+        case UPDATE_NEW_MESSAGE: {
+            let stateCopy = {...state}
+            stateCopy.newMessageText = action.newMessage;
+            return stateCopy;
+        }
+            
         default:
             return state;
     }

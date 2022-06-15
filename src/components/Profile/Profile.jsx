@@ -3,17 +3,16 @@ import React from 'react';
 
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import Wall from './Wall/Wall';
+import WallContainer from './Wall/WallContainer';
 
 const Profile = (props) => {
-    // console.log(props);
+    // console.log('Profile', props);
     // debugger;
     return (
         <div>
            <ProfileInfo />
             
-            <Wall postsData={props.profileData.postsData} 
-                newPostText={props.profileData.newPostText}
-                dispatch={props.dispatch}/>
+            <WallContainer />
         </div>
     )
 };
