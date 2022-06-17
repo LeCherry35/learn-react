@@ -19,13 +19,17 @@
   border-radius: 5px;
   font-size: 18px;
   line-height: 18px;
-  transition: 1s;
+  position: relative;
+  left: 0px;
+  transition: all 1s;
 }
 .nav__item__active {
   color: red;
-  position: relative;
   left: 10px;
   
+}
+.nav__item__active .fr{
+  display: none;
 }
 .nav__item:hover {
   background-color: red;

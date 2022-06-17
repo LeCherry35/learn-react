@@ -18,7 +18,7 @@ const Nav = (props) => {
         <NavLink className={ getClassNames } to="/dialogs"><div>Messages</div></NavLink>
         <NavLink className={ getClassNames } to="/news"><div>News</div></NavLink>
         <NavLink className={ getClassNames } to="/settings"><div>Settings</div></NavLink>
-        <NavLink className={ getClassNames } to="/friends">
+        <NavLink className={ getClassNames } to="/users">
           Friends
           <FriendsBarContainer />
         </NavLink>     
